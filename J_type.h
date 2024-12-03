@@ -6,9 +6,9 @@
 #define JAL (OPCODE==0b1101111)
 #define J		(OPCODE==0b1101111)&&(RD==0b0)
 
-//ÎÞ·ûºÅÀ©Õ¹
+
 #define offset_nB (imm_4_1 << 1) | (imm_10_5 << 5) | (imm_B_11 << 11) | (imm_12 << 12)
-//·ûºÅÀ©Õ¹
+
 #define offset_sB (imm_20 == 1) ? (offset_nB | 0xffe00000) : offset_nB
 long INSN_JAL(long pc)
 {
